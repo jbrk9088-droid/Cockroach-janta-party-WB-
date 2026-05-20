@@ -1,0 +1,576 @@
+<!-- FILE NAME: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cockroach Janta Party WB</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#efe7d7;
+      color:#1f140f;
+      font-family:'Montserrat',sans-serif;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+      width:100%;
+      padding:25px 7%;
+      background:#f2ebdd;
+      border-bottom:4px solid #1d120d;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:15px;
+    }
+
+    .logo img{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      border:3px solid #1d120d;
+    }
+
+    .logo h1{
+      font-size:38px;
+      line-height:1;
+      font-family:'Anton',sans-serif;
+      color:#1d120d;
+      letter-spacing:1px;
+    }
+
+    .join-btn{
+      background:#1d120d;
+      color:#fff;
+      padding:18px 35px;
+      font-weight:700;
+      letter-spacing:3px;
+      transition:.3s;
+    }
+
+    .join-btn:hover{
+      background:#d76b1d;
+    }
+
+    /* HERO */
+
+    .hero{
+      width:100%;
+      padding:80px 6%;
+      display:flex;
+      justify-content:center;
+    }
+
+    .poster{
+      width:100%;
+      max-width:1200px;
+      background:#fff7eb;
+      border:6px solid #1d120d;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 0 30px rgba(0,0,0,.2);
+    }
+
+    .poster-top{
+      background:#c45718;
+      color:#fff;
+      padding:20px;
+      border-bottom:6px solid #1d120d;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-weight:700;
+      letter-spacing:8px;
+      font-size:20px;
+    }
+
+    .approved{
+      position:absolute;
+      right:30px;
+      top:90px;
+      background:#8b1111;
+      color:#fff;
+      padding:18px 45px;
+      font-size:35px;
+      font-weight:900;
+      transform:rotate(12deg);
+      border:5px solid #f3d3d3;
+      z-index:5;
+    }
+
+    .hero-content{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+      padding:60px;
+    }
+
+    .hero-img img{
+      width:100%;
+      border-radius:20px;
+      border:5px solid #1d120d;
+    }
+
+    .hero-text h2{
+      font-size:40px;
+      letter-spacing:4px;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1{
+      font-size:95px;
+      line-height:.95;
+      font-family:'Anton',sans-serif;
+      color:#1d120d;
+    }
+
+    .hero-text h1 span{
+      color:#214d19;
+    }
+
+    .mini-line{
+      margin-top:20px;
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+      font-weight:700;
+      color:#214d19;
+    }
+
+    .quote{
+      background:#170c08;
+      color:#fff;
+      text-align:center;
+      padding:60px 20px;
+      border-top:8px solid #c45718;
+    }
+
+    .quote p{
+      color:#ff9d4d;
+      letter-spacing:8px;
+      margin-bottom:30px;
+    }
+
+    .quote h2{
+      font-size:70px;
+      line-height:1;
+      font-family:'Anton',sans-serif;
+    }
+
+    /* INFO */
+
+    .info{
+      padding:100px 8%;
+    }
+
+    .title{
+      font-size:70px;
+      font-family:'Anton',sans-serif;
+      margin-bottom:30px;
+      color:#1d120d;
+    }
+
+    .title span{
+      color:#c45718;
+    }
+
+    .desc{
+      font-size:20px;
+      line-height:2;
+      color:#44322a;
+    }
+
+    /* DEMANDS */
+
+    .demands{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#fff7eb;
+      border:3px solid #1d120d;
+      padding:35px;
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h3{
+      font-size:45px;
+      color:#c45718;
+      font-family:'Anton',sans-serif;
+      margin-bottom:20px;
+    }
+
+    .card p{
+      line-height:1.8;
+      color:#3b2d26;
+      font-weight:500;
+    }
+
+    /* MEMBERSHIP */
+
+    .membership{
+      background:#170c08;
+      color:#fff;
+      padding:100px 8%;
+    }
+
+    .membership .title{
+      color:#fff;
+    }
+
+    .requirements{
+      margin-top:50px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .req{
+      background:#24130d;
+      border:2px solid #c45718;
+      padding:30px;
+    }
+
+    .req h4{
+      color:#ff9d4d;
+      font-size:28px;
+      margin-bottom:15px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      padding:100px 8%;
+      text-align:center;
+    }
+
+    .contact p{
+      margin:18px 0;
+      font-size:20px;
+      color:#44322a;
+    }
+
+    .socials{
+      margin-top:40px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .socials a{
+      background:#1d120d;
+      color:#fff;
+      padding:18px 30px;
+      font-weight:700;
+      letter-spacing:2px;
+      transition:.3s;
+    }
+
+    .socials a:hover{
+      background:#c45718;
+    }
+
+    footer{
+      background:#170c08;
+      color:#fff;
+      text-align:center;
+      padding:40px;
+      border-top:5px solid #c45718;
+      line-height:2;
+    }
+
+    @media(max-width:900px){
+
+      .hero-content{
+        grid-template-columns:1fr;
+      }
+
+      .hero-text h1{
+        font-size:60px;
+      }
+
+      .quote h2{
+        font-size:40px;
+      }
+
+      .title{
+        font-size:45px;
+      }
+
+      .poster-top{
+        font-size:12px;
+        letter-spacing:3px;
+      }
+
+      .approved{
+        font-size:18px;
+        padding:10px 20px;
+      }
+
+      .logo h1{
+        font-size:24px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
+
+      <h1>
+        COCKROACH<br>
+        JANTA PARTY
+      </h1>
+
+    </div>
+
+    <a href="#join" class="join-btn">
+      JOIN THE PARTY
+    </a>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="poster">
+
+      <div class="poster-top">
+
+        <span>OFFICIAL POSTER · NO. 001</span>
+
+        <span>★ ★ ★</span>
+
+      </div>
+
+      <div class="approved">
+        APPROVED
+      </div>
+
+      <div class="hero-content">
+
+        <div class="hero-img">
+
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop">
+
+        </div>
+
+        <div class="hero-text">
+
+          <h2>
+            TOGETHER, WE SURVIVE.
+          </h2>
+
+          <h1>
+            STRONGER<br>
+            <span>TOGETHER</span>
+          </h1>
+
+          <div class="mini-line">
+            <span>UNITY</span>
+            <span>✦</span>
+            <span>RESILIENCE</span>
+            <span>✦</span>
+            <span>PROGRESS</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="quote">
+
+        <p>
+          TOGETHER · RESILIENT · UNSTOPPABLE
+        </p>
+
+        <h2>
+          "They tried to step on us.<br>
+          We came back."
+        </h2>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="info">
+
+    <h2 class="title">
+      Voice of the <span>Lazy & Unemployed</span>
+    </h2>
+
+    <p class="desc">
+
+      A political party for the people the system forgot to count.
+      Five demands. Zero sponsors. One large, stubborn swarm.
+
+      <br><br>
+
+      Sponsored by no one. Funded by nothing.
+      HQ: Wherever the wifi works.
+
+    </p>
+
+    <div class="demands">
+
+      <div class="card">
+        <h3>01</h3>
+        <p>
+          No post-retirement Rajya Sabha reward for Chief Justices.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>02</h3>
+        <p>
+          Vote deletion shall be treated as an attack on democracy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>03</h3>
+        <p>
+          50% reservation for women in Parliament & Cabinet.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>04</h3>
+        <p>
+          Truly independent media free from billionaire control.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>05</h3>
+        <p>
+          Party defectors banned from contesting for 20 years.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MEMBERSHIP -->
+
+  <section class="membership" id="join">
+
+    <h2 class="title">
+      Membership <span>Requirements</span>
+    </h2>
+
+    <div class="requirements">
+
+      <div class="req">
+        <h4>REQ / 01</h4>
+        <p>Unemployed ✓</p>
+      </div>
+
+      <div class="req">
+        <h4>REQ / 02</h4>
+        <p>Lazy ✓</p>
+      </div>
+
+      <div class="req">
+        <h4>REQ / 03</h4>
+        <p>Chronically Online ✓</p>
+      </div>
+
+      <div class="req">
+        <h4>REQ / 04</h4>
+        <p>Can rant professionally ✓</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact">
+
+    <h2 class="title">
+      Connect <span>With Us</span>
+    </h2>
+
+    <p>Email: contact@cockroachjantaparty.org</p>
+
+    <p>Founder: Abhijeet Dipke & JB PAPA 71</p>
+
+    <p>Headquarters: Wherever the wifi works.</p>
+
+    <div class="socials">
+
+      <a href="#">Twitter / X</a>
+
+      <a href="#">Instagram</a>
+
+      <a href="#">YouTube</a>
+
+      <a href="#">Telegram</a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Cockroach Janta Party WB · All rants reserved.<br>
+
+    ⚠ A work of satire
+
+  </footer>
+
+</body>
+  </html>
